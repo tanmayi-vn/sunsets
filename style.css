@@ -1,0 +1,189 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Whole page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0;
+    color: #2b1b14;
+}
+
+
+/* ---------------- NAVBAR ---------------- */
+
+nav {
+    height: 90px;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 60px;
+}
+
+nav h1 {
+    font-size: 30px;
+}
+
+
+/* ---------------- HERO ---------------- */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: linear-gradient(
+        to bottom,
+        #ffb36b,
+        #ff8c69,
+        #e96b8b
+    );
+
+    color: white;
+
+    padding: 40px;
+}
+
+.hero h2 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 650px;
+}
+
+
+/* ---------------- GALLERY ---------------- */
+
+.gallery {
+    padding: 60px 18%;
+}
+
+.gallery h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 45px;
+}
+
+
+/* Two photos per row */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+/* Portrait photos */
+.gallery-container img {
+    width: 100%;
+    height: 430px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    display: block;
+}
+
+
+/* ---------------- FIRST PHOTO ---------------- */
+
+.gallery-container img:first-child {
+    grid-column: 1 / -1;
+    height: 380px;
+}
+
+
+/* ---------------- INDIVIDUAL PHOTO POSITIONING ---------------- */
+
+/* Image 2 */
+.gallery-container img:nth-child(2) {
+    height: 500px;
+    object-position: center 30%;
+}
+
+
+/* Image 3 */
+.gallery-container img:nth-child(3) {
+    height: 500px;
+    object-position: center 50%;
+}
+
+
+/* Image 4 */
+.gallery-container img:nth-child(4) {
+    object-position: center 75%;
+}
+
+
+/* Image 5 */
+.gallery-container img:nth-child(5) {
+    object-position: center 60%;
+}
+
+
+/* Image 6 */
+.gallery-container img:nth-child(6) {
+    object-position: center 50%;
+}
+
+
+/* Image 7 */
+.gallery-container img:nth-child(7) {
+    object-position: center 50%;
+}
+
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 0 25px;
+    }
+
+    .hero h2 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .gallery {
+        padding: 40px 25px;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-container img:first-child {
+        height: 300px;
+    }
+
+    .gallery-container img:nth-child(2),
+    .gallery-container img:nth-child(3) {
+        height: 500px;
+    }
+
+    .gallery-container img {
+        height: 430px;
+    }
+
+}
