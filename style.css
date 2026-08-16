@@ -1,96 +1,472 @@
-/* Reset */
+/* ================================================= */
+/* ==================== RESET ===================== */
+/* ================================================= */
+
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
 
 
-/* Whole page */
+
+/* ================================================= */
+/* ==================== BODY ====================== */
+/* ================================================= */
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
 body {
+
     font-family: Arial, sans-serif;
+
     background-color: #fff8f0;
+
     color: #2b1b14;
+
+    overflow-x: hidden;
+
 }
 
 
-/* ---------------- NAVBAR ---------------- */
+
+/* ================================================= */
+/* ================= HOME PAGE ==================== */
+/* ================================================= */
+
+#home-page {
+
+    min-height: 100vh;
+
+    display: block;
+
+}
+
+
+
+/* ================================================= */
+/* ================== NAVBAR ====================== */
+/* ================================================= */
 
 nav {
+
     height: 90px;
-    background-color: white;
+
+    background-color: #fffaf5;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     padding: 0 60px;
+
+    border-bottom: 1px solid rgba(74, 44, 34, 0.12);
+
 }
+
 
 nav h1 {
-    font-size: 30px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    color: #4a2c22;
+
 }
 
 
-/* ---------------- HERO ---------------- */
+
+/* ================================================= */
+/* ================ VIEW COLLECTION ============== */
+/* ================================================= */
+
+.nav-button {
+
+    padding: 11px 22px;
+
+    border: 1px solid #4a2c22;
+
+    border-radius: 25px;
+
+    background: transparent;
+
+    color: #4a2c22;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+}
+
+
+.nav-button:hover {
+
+    background-color: #4a2c22;
+
+    color: white;
+
+}
+
+
+
+/* ================================================= */
+/* ==================== HERO ====================== */
+/* ================================================= */
 
 .hero {
-    min-height: 500px;
+
+    min-height: calc(100vh - 90px);
 
     display: flex;
-    flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
-
-    background: linear-gradient(
-        to bottom,
-        #ffb36b,
-        #ff8c69,
-        #e96b8b
-    );
 
     color: white;
 
     padding: 40px;
+
+    background-image:
+
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.45)
+        ),
+
+        url("images/sunset1.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
 }
+
+
+.hero-content {
+
+    max-width: 800px;
+
+}
+
+
+
+/* ================================================= */
+/* ================= HERO LABEL =================== */
+/* ================================================= */
+
+.hero-label {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.hero-label p {
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    color: white;
+
+}
+
+
+.hero-label span {
+
+    width: 45px;
+
+    height: 1px;
+
+    background-color: rgba(255, 255, 255, 0.7);
+
+}
+
+
+
+/* ================================================= */
+/* ================= HERO TITLE =================== */
+/* ================================================= */
 
 .hero h2 {
-    font-size: 55px;
-    margin-bottom: 20px;
+
+    font-size: 65px;
+
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+
 }
 
-.hero p {
-    font-size: 20px;
-    max-width: 650px;
+
+
+/* ================================================= */
+/* ============== HERO DESCRIPTION ================ */
+/* ================================================= */
+
+.hero-description {
+
+    font-size: 19px;
+
+    max-width: 600px;
+
+    margin: 0 auto 35px;
+
+    line-height: 1.6;
+
 }
 
 
-/* ---------------- GALLERY ---------------- */
+
+/* ================================================= */
+/* =============== EXPLORE BUTTON ================ */
+/* ================================================= */
+
+.hero-button {
+
+    padding: 14px 28px;
+
+    border: 1px solid white;
+
+    border-radius: 30px;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+}
+
+
+.hero-button:hover {
+
+    background-color: white;
+
+    color: #2b1b14;
+
+}
+
+
+
+/* ================================================= */
+/* =============== COLLECTION PAGE =============== */
+/* ================================================= */
+
+#collection-page {
+
+    display: none;
+
+    min-height: 100vh;
+
+    background-color: #fff8f0;
+
+}
+
+
+
+/* ================================================= */
+/* ============ COLLECTION NAVBAR ================ */
+/* ================================================= */
+
+.collection-nav {
+
+    height: 90px;
+
+    background-color: #fffaf5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 60px;
+
+    border-bottom: 1px solid rgba(74, 44, 34, 0.12);
+
+}
+
+
+.collection-nav h1 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+
+    font-weight: 500;
+
+    letter-spacing: 1px;
+
+    color: #4a2c22;
+
+}
+
+
+
+/* ================================================= */
+/* ================= BACK BUTTON ================= */
+/* ================================================= */
+
+.back-button {
+
+    padding: 11px 22px;
+
+    border: 1px solid #4a2c22;
+
+    border-radius: 25px;
+
+    background: transparent;
+
+    color: #4a2c22;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+}
+
+
+.back-button:hover {
+
+    background-color: #4a2c22;
+
+    color: white;
+
+}
+
+
+
+/* ================================================= */
+/* ================== GALLERY ===================== */
+/* ================================================= */
 
 .gallery {
+
     padding: 60px 18%;
+
 }
 
-.gallery h2 {
+
+
+/* ================================================= */
+/* ============ COLLECTION HEADING =============== */
+/* ================================================= */
+
+.section-heading {
+
     text-align: center;
-    font-size: 36px;
+
     margin-bottom: 45px;
+
+    animation: headingAppear 0.8s ease both;
+
 }
 
 
-/* Two photos per row */
+.section-heading p {
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color: #a66a4c;
+
+    margin-bottom: 14px;
+
+}
+
+
+.section-heading h2 {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+
+    font-weight: 500;
+
+    color: #4a2c22;
+
+    margin-bottom: 18px;
+
+}
+
+
+.section-heading span {
+
+    display: block;
+
+    width: 55px;
+
+    height: 1px;
+
+    background-color: #a66a4c;
+
+    margin: auto;
+
+}
+
+
+
+/* ================================================= */
+/* ================= GALLERY GRID ================= */
+/* ================================================= */
+
 .gallery-container {
+
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
+
     gap: 25px;
+
 }
 
 
-/* Portrait photos */
+
+/* ================================================= */
+/* ==================== PHOTOS =================== */
+/* ================================================= */
+
 .gallery-container img {
+
     width: 100%;
+
     height: 430px;
 
     object-fit: cover;
@@ -98,92 +474,300 @@ nav h1 {
     border-radius: 15px;
 
     display: block;
+
 }
 
 
-/* ---------------- FIRST PHOTO ---------------- */
+
+/* ================================================= */
+/* ================= FIRST PHOTO ================= */
+/* ================================================= */
 
 .gallery-container img:first-child {
+
     grid-column: 1 / -1;
+
     height: 380px;
+
 }
 
 
-/* ---------------- INDIVIDUAL PHOTO POSITIONING ---------------- */
 
-/* Image 2 */
+/* ================================================= */
+/* ================= IMAGE 2 ====================== */
+/* ================================================= */
+
 .gallery-container img:nth-child(2) {
+
     height: 500px;
+
     object-position: center 30%;
+
 }
 
 
-/* Image 3 */
+
+/* ================================================= */
+/* ================= IMAGE 3 ====================== */
+/* ================================================= */
+
 .gallery-container img:nth-child(3) {
+
     height: 500px;
+
     object-position: center 50%;
+
 }
 
 
-/* Image 4 */
+
+/* ================================================= */
+/* ================= IMAGE 4 ====================== */
+/* ================================================= */
+
 .gallery-container img:nth-child(4) {
+
     object-position: center 75%;
+
 }
 
 
-/* Image 5 */
+
+/* ================================================= */
+/* ================= IMAGE 5 ====================== */
+/* ================================================= */
+
 .gallery-container img:nth-child(5) {
+
     object-position: center 60%;
+
 }
 
 
-/* Image 6 */
+
+/* ================================================= */
+/* ================= IMAGE 6 ====================== */
+/* ================================================= */
+
 .gallery-container img:nth-child(6) {
+
     object-position: center 50%;
+
 }
 
 
-/* Image 7 */
+
+/* ================================================= */
+/* ================= IMAGE 7 ====================== */
+/* ================================================= */
+
 .gallery-container img:nth-child(7) {
+
     object-position: center 50%;
+
 }
 
 
-/* ---------------- MOBILE ---------------- */
+
+/* ================================================= */
+/* ============ PHOTO SCROLL ANIMATION ============ */
+/* ================================================= */
+
+
+/* Photos start slightly lower and invisible */
+
+.gallery-photo {
+
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        filter 0.5s ease,
+        box-shadow 0.5s ease;
+
+}
+
+
+/* When photo enters the screen */
+
+.gallery-photo.photo-visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+
+/* ================================================= */
+/* =============== PHOTO HOVER EFFECT ============= */
+/* ================================================= */
+
+.gallery-photo.photo-visible:hover {
+
+    transform: scale(1.02);
+
+    filter: brightness(0.92);
+
+    box-shadow: 0 12px 30px rgba(43, 27, 20, 0.18);
+
+    cursor: pointer;
+
+}
+
+
+
+/* ================================================= */
+/* =========== HEADING ANIMATION ================== */
+/* ================================================= */
+
+@keyframes headingAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+/* ================================================= */
+/* ==================== MOBILE ==================== */
+/* ================================================= */
 
 @media (max-width: 700px) {
 
-    nav {
+
+    nav,
+    .collection-nav {
+
         padding: 0 25px;
+
     }
+
+
+    nav h1,
+    .collection-nav h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .nav-button,
+    .back-button {
+
+        padding: 9px 16px;
+
+        font-size: 12px;
+
+    }
+
+
+    .hero {
+
+        min-height: calc(100vh - 90px);
+
+        padding: 30px 20px;
+
+    }
+
 
     .hero h2 {
-        font-size: 38px;
+
+        font-size: 42px;
+
     }
 
-    .hero p {
-        font-size: 17px;
+
+    .hero-description {
+
+        font-size: 16px;
+
     }
+
+
+    .hero-label p {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .hero-label span {
+
+        width: 30px;
+
+    }
+
 
     .gallery {
+
         padding: 40px 25px;
+
     }
+
+
+    .section-heading h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .section-heading p {
+
+        font-size: 9px;
+
+        letter-spacing: 3px;
+
+    }
+
 
     .gallery-container {
+
         grid-template-columns: 1fr;
+
     }
 
+
     .gallery-container img:first-child {
+
         height: 300px;
+
     }
+
 
     .gallery-container img:nth-child(2),
     .gallery-container img:nth-child(3) {
+
         height: 500px;
+
     }
 
+
     .gallery-container img {
+
         height: 430px;
+
     }
 
 }
