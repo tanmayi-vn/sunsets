@@ -2,48 +2,369 @@
 <html>
 
 <head>
+
     <title>Sunset Stories</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <h1>Sunset Stories</h1>
-    </nav>
+
+    <!-- ================= HOME PAGE ================= -->
+
+    <div id="home-page">
 
 
-    <!-- Hero Section -->
-    <section class="hero">
+        <!-- Navigation -->
 
-        <h2>Chasing the beautiful sunsets.</h2>
+        <nav>
 
-        <p>
-            A collection of sunsets I've captured and couldn't stop looking at.
-        </p>
+            <h1>Sunset Stories</h1>
 
-    </section>
+            <button
+                class="nav-button"
+                onclick="openCollection()"
+            >
+                View Collection
+            </button>
+
+        </nav>
 
 
-    <!-- Gallery Section -->
-    <section class="gallery">
 
-        <h2>My Sunset Collection</h2>
+        <!-- Hero Section -->
 
-        <div class="gallery-container">
+        <section class="hero">
 
-            <img src="images/sunset1.jpeg" alt="Sunset photograph">
-            <img src="images/sunset2.jpeg" alt="Sunset photograph">
-            <img src="images/sunset3.jpeg" alt="Sunset photograph">
-            <img src="images/sunset4.jpeg" alt="Sunset photograph">
-            <img src="images/sunset5.jpeg" alt="Sunset photograph">
-            <img src="images/sunset6.jpeg" alt="Sunset photograph">
-            <img src="images/sunset7.jpeg" alt="Sunset photograph">
+            <div class="hero-content">
 
-        </div>
 
-    </section>
+                <!-- Hero Label -->
+
+                <div class="hero-label">
+
+                    <span></span>
+
+                    <p>MOMENTS BETWEEN LIGHT & SKY</p>
+
+                    <span></span>
+
+                </div>
+
+
+
+                <!-- Hero Heading -->
+
+                <h2>
+                    Chasing the<br>
+                    beautiful sunsets.
+                </h2>
+
+
+
+                <!-- Hero Description -->
+
+                <p class="hero-description">
+
+                    A collection of sunsets I've captured
+                    and couldn't stop looking at.
+
+                </p>
+
+
+
+                <!-- Explore Button -->
+
+                <button
+                    class="hero-button"
+                    onclick="openCollection()"
+                >
+
+                    Explore Collection ↓
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+
+    <!-- ================= COLLECTION PAGE ================= -->
+
+    <div id="collection-page">
+
+
+        <!-- Collection Navigation -->
+
+        <nav class="collection-nav">
+
+            <h1>Sunset Stories</h1>
+
+
+            <button
+                class="back-button"
+                onclick="goHome()"
+            >
+
+                ← Back to Home
+
+            </button>
+
+        </nav>
+
+
+
+        <!-- Gallery -->
+
+        <section class="gallery">
+
+
+            <!-- Heading -->
+
+            <div class="section-heading">
+
+                <p>THE MOMENTS I KEPT</p>
+
+                <h2>My Sunset Collection</h2>
+
+                <span></span>
+
+            </div>
+
+
+
+            <!-- Photos -->
+
+            <div class="gallery-container">
+
+
+                <img
+                    class="gallery-photo"
+                    src="images/sunset1.jpeg"
+                    alt="Sunset photograph"
+                >
+
+
+                <img
+                    class="gallery-photo"
+                    src="images/sunset2.jpeg"
+                    alt="Sunset photograph"
+                >
+
+
+                <img
+                    class="gallery-photo"
+                    src="images/sunset3.jpeg"
+                    alt="Sunset photograph"
+                >
+
+
+                <img
+                    class="gallery-photo"
+                    src="images/sunset4.jpeg"
+                    alt="Sunset photograph"
+                >
+
+
+                <img
+                    class="gallery-photo"
+                    src="images/sunset5.jpeg"
+                    alt="Sunset photograph"
+                >
+
+
+                <img
+                    class="gallery-photo"
+                    src="images/sunset6.jpeg"
+                    alt="Sunset photograph"
+                >
+
+
+                <img
+                    class="gallery-photo"
+                    src="images/sunset7.jpeg"
+                    alt="Sunset photograph"
+                >
+
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+
+
+    <!-- ================================================= -->
+    <!-- ================= JAVASCRIPT ==================== -->
+    <!-- ================================================= -->
+
+    <script>
+
+
+        /* ================= OPEN COLLECTION ================= */
+
+
+        function openCollection() {
+
+
+            /* Hide Home */
+
+            document.getElementById("home-page").style.display = "none";
+
+
+            /* Show Collection */
+
+            document.getElementById("collection-page").style.display = "block";
+
+
+            /* Start collection from the top */
+
+            window.scrollTo(0, 0);
+
+
+            /* Reset previous scroll */
+
+            previousScroll = 0;
+
+
+        }
+
+
+
+        /* ================= GO HOME ================= */
+
+
+        function goHome() {
+
+
+            /* Hide Collection */
+
+            document.getElementById("collection-page").style.display = "none";
+
+
+            /* Show Home */
+
+            document.getElementById("home-page").style.display = "block";
+
+
+            /* Go to top */
+
+            window.scrollTo(0, 0);
+
+
+        }
+
+
+
+        /* ================= SCROLL TO HOME ================= */
+
+
+        let previousScroll = 0;
+
+
+        window.addEventListener("scroll", function () {
+
+
+            /* Only check when Collection is visible */
+
+            const collection =
+                document.getElementById("collection-page");
+
+
+            if (collection.style.display === "block") {
+
+
+                const currentScroll = window.scrollY;
+
+
+                /*
+                If user was down in the collection
+                and reaches the very top
+                */
+
+                if (
+                    currentScroll <= 0 &&
+                    previousScroll > 20
+                ) {
+
+                    goHome();
+
+                }
+
+
+                previousScroll = currentScroll;
+
+            }
+
+        });
+
+
+
+        /* ================================================= */
+        /* =========== PHOTO SCROLL ANIMATION ============== */
+        /* ================================================= */
+
+
+        const galleryPhotos =
+            document.querySelectorAll(".gallery-photo");
+
+
+        const photoObserver =
+            new IntersectionObserver(
+
+                function (entries, observer) {
+
+
+                    entries.forEach(function (entry) {
+
+
+                        if (entry.isIntersecting) {
+
+
+                            entry.target.classList.add("photo-visible");
+
+
+                            observer.unobserve(entry.target);
+
+
+                        }
+
+                    });
+
+
+                },
+
+
+                {
+
+                    threshold: 0.15
+
+                }
+
+            );
+
+
+
+        galleryPhotos.forEach(function (photo) {
+
+            photoObserver.observe(photo);
+
+        });
+
+
+    </script>
+
 
 </body>
 
